@@ -38,4 +38,17 @@
         <item name="colorAccent">@color/black_little</item>
     </style>
 
+    <style name = "AppTheme" parent = "BaseAppTheme2" />
+    <!-- custom theme -->
+    <style name = "BaseAppTheme2" parent = "Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name = "colorPrimary">@color/colorOrange</item>
+        <item name = "colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name = "colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name = "AppTheme.NoActionBar">
+        <item name = "windowNoTitle">true</item>
+        <item name = "windowActionBar">true</item>
+    </style>
 </resources>
