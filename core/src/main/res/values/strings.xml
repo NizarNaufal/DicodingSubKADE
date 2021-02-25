@@ -1,0 +1,5 @@
+<resources>
+    <string name="content_description_movie_poster">Movie poster</string>
+    <string name="poster_example_title">Title Should be Here</string>
+    <string name="poster_example_release_year">September 4037</string>
+</resources>
