@@ -2,6 +2,7 @@ package id.kadenizar.dicodingmovies.view
 
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.view.Menu
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -35,7 +36,6 @@ class HomeActivity : BaseActivity(), ViewNetworkState, IView {
             setOf(
                 R.id.navigation_movie,
                 R.id.navigation_series,
-                R.id.navigation_search,
                 R.id.navigation_favorite
             )
         )
@@ -57,7 +57,7 @@ class HomeActivity : BaseActivity(), ViewNetworkState, IView {
             } else {
                 this.doubleBackToExitPressedOnce = true
                 showToast(getString(R.string.message_double_klik_to_close))
-                Handler().postDelayed({ doubleBackToExitPressedOnce = false }, 2000)
+                Handler(Looper.getMainLooper()).postDelayed({ doubleBackToExitPressedOnce = false }, 2000)
             }
 
         }

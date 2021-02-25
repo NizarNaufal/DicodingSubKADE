@@ -5,8 +5,8 @@
     android:id="@+id/scrollview_detail"
     style="@style/ScrollViewDetailPage"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.detail.DetailActivity">
+    android:background="@color/white"
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -53,12 +53,13 @@
             android:maxLines="2"
             android:text="@string/poster_example_title"
             android:textSize="28sp"
+            android:textColor="@color/white"
             android:textStyle="bold"
             app:autoStart="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_detail_poster"
             app:layout_constraintTop_toTopOf="@+id/iv_detail_poster"
-            app:skeletonColor="@color/skeleton_grey_light" />
+            app:skeletonColor="@color/white" />
 
         <aglibs.loading.skeleton.view.SkeletonTextView
             android:id="@+id/tv_detail_releaseDate"
@@ -67,6 +68,7 @@
             android:layout_marginTop="16dp"
             android:text="@string/poster_example_release_year"
             app:autoStart="false"
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@+id/tv_detail_title"
             app:layout_constraintTop_toBottomOf="@+id/tv_detail_title"
             app:skeletonColor="@color/skeleton_grey_light" />

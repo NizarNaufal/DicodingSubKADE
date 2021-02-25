@@ -45,10 +45,11 @@
         <item name = "colorPrimary">@color/colorOrange</item>
         <item name = "colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name = "colorAccent">@color/colorAccent</item>
-    </style>
 
-    <style name = "AppTheme.NoActionBar">
-        <item name = "windowNoTitle">true</item>
-        <item name = "windowActionBar">true</item>
+        <!-- StatusResponse bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/black</item>
+
+        <!-- Bottom Navigation -->
+        <item name="bottomNavigationStyle">@color/black_little</item>
     </style>
 </resources>

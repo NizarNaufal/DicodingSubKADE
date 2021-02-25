@@ -11,10 +11,6 @@
         android:icon="@drawable/ic_baseline_tv_24"
         android:title="@string/series"/>
     <item
-        android:id="@+id/navigation_search"
-        android:icon="@drawable/ic_baseline_search_24"
-        android:title="@string/search"/>
-    <item
         android:id="@+id/navigation_favorite"
         android:icon="@drawable/ic_baseline_favorite_24"
         android:title="@string/favorite" />
