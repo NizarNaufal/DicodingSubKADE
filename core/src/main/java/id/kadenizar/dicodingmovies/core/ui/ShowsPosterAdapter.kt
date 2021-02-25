@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.dhimas.dhiflix.core.R
-import com.dhimas.dhiflix.core.databinding.ItemShowHorizontalBinding
+import id.kadenizar.dicodingmovies.core.R
+import id.kadenizar.dicodingmovies.core.databinding.ItemShowHorizontalBinding
 import id.kadenizar.dicodingmovies.core.domain.model.Show
 import id.kadenizar.dicodingmovies.core.utils.Const
 

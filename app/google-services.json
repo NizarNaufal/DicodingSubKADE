@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "296091789285",
+    "project_id": "dicoding-kade",
+    "storage_bucket": "dicoding-kade.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:296091789285:android:43f30648c968122cfff10c",
+        "android_client_info": {
+          "package_name": "id.kadenizar.dicodingmovies"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "296091789285-992i8q1gple082tf9va5r6sb8t0dugj9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.kadenizar.dicodingmovies",
+            "certificate_hash": "bb563f130f5e67e87b67acc360b4799a3319363e"
+          }
+        },
+        {
+          "client_id": "296091789285-s82rpu7gjjvftd6ei4v5r0hatnsv8cfk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmWspTyqdYW9UsJYy2g5VZPPiYx8XkVuc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "296091789285-s82rpu7gjjvftd6ei4v5r0hatnsv8cfk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

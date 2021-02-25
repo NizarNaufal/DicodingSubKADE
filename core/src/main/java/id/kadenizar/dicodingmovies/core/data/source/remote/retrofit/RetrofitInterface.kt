@@ -1,6 +1,6 @@
 package id.kadenizar.dicodingmovies.core.data.source.remote.retrofit
 
-import com.dhimas.dhiflix.core.BuildConfig
+import id.kadenizar.dicodingmovies.core.BuildConfig
 import id.kadenizar.dicodingmovies.core.data.source.remote.response.MovieListResponse
 import id.kadenizar.dicodingmovies.core.data.source.remote.response.MovieResponse
 import id.kadenizar.dicodingmovies.core.data.source.remote.response.SeriesListResponse

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollview_detail"
+    style="@style/ScrollViewDetailPage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.detail.DetailActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_detail_backdrop"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:background="@drawable/backdrop_placeholder"
+            android:contentDescription="@string/content_description_movie_backdrop"
+            android:foreground="@drawable/backdrop_gradient"
+            android:scaleType="fitCenter"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/backdrop_placeholder" />
+
+        <aglibs.loading.skeleton.view.SkeletonImageView
+            android:id="@+id/iv_detail_poster"
+            android:layout_width="110dp"
+            android:layout_height="165dp"
+            android:layout_marginStart="16dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/poster_placeholder"
+            android:contentDescription="@string/content_description_movie_poster"
+            app:autoStart="false"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_detail_backdrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_detail_backdrop"
+            app:skeletonColor="@color/skeleton_grey_light"
+            app:srcCompat="@drawable/poster_placeholder" />
+
+        <aglibs.loading.skeleton.view.SkeletonTextView
+            android:id="@+id/tv_detail_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:lineSpacingExtra="2dp"
+            android:maxLines="2"
+            android:text="@string/poster_example_title"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:autoStart="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_detail_poster"
+            app:layout_constraintTop_toTopOf="@+id/iv_detail_poster"
+            app:skeletonColor="@color/skeleton_grey_light" />
+
+        <aglibs.loading.skeleton.view.SkeletonTextView
+            android:id="@+id/tv_detail_releaseDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/poster_example_release_year"
+            app:autoStart="false"
+            app:layout_constraintStart_toStartOf="@+id/tv_detail_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_detail_title"
+            app:skeletonColor="@color/skeleton_grey_light" />
+
+        <aglibs.loading.skeleton.view.SkeletonTextView
+            android:id="@+id/tv_detail_overviewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/overview"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:autoStart="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_detail_poster"
+            app:skeletonColor="@color/skeleton_grey_light" />
+
+        <aglibs.loading.skeleton.view.SkeletonTextView
+            android:id="@+id/tv_detail_overview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:lineSpacingExtra="2dp"
+            android:maxLines="8"
+            android:text="@string/movie_example_overview"
+            app:autoStart="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_detail_overviewTitle"
+            app:shimmerLightenFactor="0.7"
+            app:skeletonColor="@color/skeleton_grey_light" />
+
+        <aglibs.loading.skeleton.view.SkeletonTextView
+            android:id="@+id/tv_detail_interestTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/maybe_you_re_interested"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:autoStart="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_detail_overview"
+            app:skeletonColor="@color/skeleton_grey_light" />
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmerLayout_detail_otherShows"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            app:autoStart="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_detail_interestTitle"
+            app:shimmer_auto_start="true"
+            app:shimmer_base_color="#E4DDDD"
+            app:shimmer_duration="1000">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00FFFFFF"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="0dp">
+
+                <include layout="@layout/shimmer_item_show_horizontal" />
+
+                <include layout="@layout/shimmer_item_show_horizontal" />
+
+                <include layout="@layout/shimmer_item_show_horizontal" />
+
+                <include layout="@layout/shimmer_item_show_horizontal" />
+
+                <include layout="@layout/shimmer_item_show_horizontal" />
+
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_detail_other_shows"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_detail_interestTitle"
+            tools:itemCount="20"
+            tools:listitem="@layout/item_show_horizontal" />
+
+
+        <aglibs.loading.skeleton.view.SkeletonButtonView
+            android:id="@+id/bt_detail_favorite"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#FBA526"
+            android:text="@string/add_to_favorite"
+            app:autoStart="false"
+            app:layout_constraintEnd_toEndOf="@+id/tv_detail_title"
+            app:layout_constraintStart_toStartOf="@+id/tv_detail_releaseDate"
+            app:layout_constraintTop_toBottomOf="@+id/tv_detail_releaseDate"
+            app:skeletonColor="@color/skeleton_grey_light" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

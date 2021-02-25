@@ -74,7 +74,7 @@
         android:layout_width="230dp"
         android:layout_height="230dp"
         android:contentDescription="@string/favorite_empty"
-        android:src="@drawable/undraw_tree"
+        android:src="@drawable/nodata"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

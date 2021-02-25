@@ -11,15 +11,18 @@ import id.kadenizar.dicodingmovies.core.data.Resource
 import id.kadenizar.dicodingmovies.core.domain.model.Show
 import id.kadenizar.dicodingmovies.core.ui.ShowsPosterAdapter
 import id.kadenizar.dicodingmovies.core.utils.Const
-import com.dhimas.dhiflix.favorite.databinding.FragmentFavoriteBinding
+import id.kadenizar.dicodingmovies.favorite.databinding.FragmentFavoriteBinding
 import id.kadenizar.dicodingmovies.favorite.di.favoriteModule
-import com.dhimas.dhiflix.ui.detail.DetailActivity
+import id.kadenizar.dicodingmovies.services.IView
+import id.kadenizar.dicodingmovies.services.ViewNetworkState
+import id.kadenizar.dicodingmovies.services.base.BaseFragment
+import id.kadenizar.dicodingmovies.view.movie.details.DetailActivity
 import org.koin.android.ext.android.getKoin
 import org.koin.android.viewmodel.scope.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.core.qualifier.named
 
-class FavoriteFragment : Fragment() {
+class FavoriteFragment : BaseFragment(),ViewNetworkState,IView {
 
     //Scope and Koin DI for ViewModel
     private val scopeId = "FavoriteScope"
@@ -47,44 +50,9 @@ class FavoriteFragment : Fragment() {
 
         loadKoinModules(favoriteModule)
 
-        setupUI()
+        initView()
         viewModelObserveMovies() //Load favorite movie list
         viewModelObserveSeries() //Load favorite series list
-    }
-
-    private fun setupUI() {
-        //Movie
-        favoriteMovieAdapter = ShowsPosterAdapter()
-        favoriteMovieAdapter.onItemClick = { selectedShow ->
-            val intent = Intent(requireContext(), DetailActivity::class.java)
-            intent.putExtra(DetailActivity.EXTRA_SHOW_ID, selectedShow.id)
-            intent.putExtra(DetailActivity.EXTRA_SHOW_TYPE, selectedShow.showType)
-            startActivity(intent)
-        }
-
-        //Series
-        favoriteSeriesAdapter = ShowsPosterAdapter()
-        favoriteSeriesAdapter.onItemClick = { selectedShow ->
-            val intent = Intent(requireContext(), DetailActivity::class.java)
-            intent.putExtra(DetailActivity.EXTRA_SHOW_ID, selectedShow.id)
-            intent.putExtra(DetailActivity.EXTRA_SHOW_TYPE, selectedShow.showType)
-            startActivity(intent)
-        }
-
-
-        with(binding) {
-            //Movie
-            rvFavoriteMovie.layoutManager =
-                LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-            rvFavoriteMovie.hasFixedSize()
-            rvFavoriteMovie.adapter = favoriteMovieAdapter
-
-            //Series
-            rvFavoriteSeries.layoutManager =
-                LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-            rvFavoriteSeries.hasFixedSize()
-            rvFavoriteSeries.adapter = favoriteSeriesAdapter
-        }
     }
 
     private fun viewModelObserveMovies() {
@@ -193,6 +161,41 @@ class FavoriteFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         moduleFavorite.close()
+    }
+
+    override fun initView() {
+        //Movie
+        favoriteMovieAdapter = ShowsPosterAdapter()
+        favoriteMovieAdapter.onItemClick = { selectedShow ->
+            val intent = Intent(requireContext(), DetailActivity::class.java)
+            intent.putExtra(DetailActivity.EXTRA_SHOW_ID, selectedShow.id)
+            intent.putExtra(DetailActivity.EXTRA_SHOW_TYPE, selectedShow.showType)
+            startActivity(intent)
+        }
+
+        //Series
+        favoriteSeriesAdapter = ShowsPosterAdapter()
+        favoriteSeriesAdapter.onItemClick = { selectedShow ->
+            val intent = Intent(requireContext(), DetailActivity::class.java)
+            intent.putExtra(DetailActivity.EXTRA_SHOW_ID, selectedShow.id)
+            intent.putExtra(DetailActivity.EXTRA_SHOW_TYPE, selectedShow.showType)
+            startActivity(intent)
+        }
+
+
+        with(binding) {
+            //Movie
+            rvFavoriteMovie.layoutManager =
+                LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            rvFavoriteMovie.hasFixedSize()
+            rvFavoriteMovie.adapter = favoriteMovieAdapter
+
+            //Series
+            rvFavoriteSeries.layoutManager =
+                LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            rvFavoriteSeries.hasFixedSize()
+            rvFavoriteSeries.adapter = favoriteSeriesAdapter
+        }
     }
 
 }
